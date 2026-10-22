@@ -9,7 +9,7 @@
 </div><script>
 const SUPABASE_URL='https://wndmicnuwtycjvnkrzqu.supabase.co';
 const SUPABASE_KEY='sb_publishable_OUYK5IAjYmu1Q_KTCCq1gA_LrTt26a9';
-const supabaseClient=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const supabaseClient=window.supabase ? window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY) : null;
 const KEY='evaluation-tactile-v1';
 const CLASS_NAMES=['6ème','5ème','4ème','3ème'];
 const DEFAULT_ACTIVITIES=[['Danse','CO','Natation','TT','Lutte','Athlé'],['CO','Rugby','Bad','1/2 fond'],['TT','Basket','Volley'],['Bad','Volley','Acro','Renfo']];
