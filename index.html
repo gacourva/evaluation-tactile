@@ -20,6 +20,7 @@ async function downloadFromCloud(){if(!supabaseClient)return alert('Supabase ind
 const KEY='evaluation-tactile-v1';
 const SYNC_REVISION_KEY='evaluation-tactile-sync-revision';
 let syncRevision=Number(localStorage.getItem(SYNC_REVISION_KEY)||0);
+let syncTimer=null;
 const CLASS_NAMES=['6ème','5ème','4ème','3ème'];
 const DEFAULT_ACTIVITIES=[['Danse','CO','Natation','TT','Lutte','Athlé'],['CO','Rugby','Bad','1/2 fond'],['TT','Basket','Volley'],['Bad','Volley','Acro','Renfo']];
 const DEFAULT_GROUPS=[['6ème2'],['5ème3'],['4ème2','4ème4'],['3ème1','3ème5']];
