@@ -22,6 +22,7 @@ const SYNC_REVISION_KEY='evaluation-tactile-sync-revision';
 let syncRevision=Number(localStorage.getItem(SYNC_REVISION_KEY)||0);
 let syncTimer=null;
 function scheduleCloudSync(){clearTimeout(syncTimer);syncTimer=setTimeout(()=>{console.log('Test synchronisation automatique')},1500)}
+async function autoCloudSync(){console.log('Envoi automatique non activé')}
 const CLASS_NAMES=['6ème','5ème','4ème','3ème'];
 const DEFAULT_ACTIVITIES=[['Danse','CO','Natation','TT','Lutte','Athlé'],['CO','Rugby','Bad','1/2 fond'],['TT','Basket','Volley'],['Bad','Volley','Acro','Renfo']];
 const DEFAULT_GROUPS=[['6ème2'],['5ème3'],['4ème2','4ème4'],['3ème1','3ème5']];
