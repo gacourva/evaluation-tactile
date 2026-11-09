@@ -57,7 +57,14 @@ function printClassReport(){
   const selected=eligible.map(x=>({criterion:x.criterion,index:x.index,choiceIndex:values[x.index]})).filter(x=>x.choiceIndex!==null&&x.choiceIndex!==undefined&&x.criterion.choices&&x.criterion.choices[x.choiceIndex]);
   if(!selected.length)return null;
   let weighted=0,weight=0;
-  selected.forEach(x=>{const coef=Number(x.criterion.coef||0);weighted+=Number(x.criterion.choices[x.choiceIndex].pts||0)*coef;weight+=coef});
+  criteria.forEach((criterion,ci)=>{
+   const choiceIndex=values[ci];
+   if(choiceIndex!==null&&choiceIndex!==undefined&&criterion.choices&&criterion.choices[choiceIndex]){
+    const coef=Number(criterion.coef||0);
+    weighted+=Number(criterion.choices[choiceIndex].pts||0)*coef;
+    weight+=coef;
+   }
+  });
   const score=weight?weighted/weight:null;
   return {name,selected,score};
  }).filter(Boolean);
