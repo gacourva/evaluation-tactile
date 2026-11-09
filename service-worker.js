@@ -1,4 +1,4 @@
-const CACHE = 'evaluation-tactile-v12';
+const CACHE = 'evaluation-tactile-v13';
 
 const ASSETS = [
   './',
